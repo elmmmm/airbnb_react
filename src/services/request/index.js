@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL, TIME_OUT } from "./config";
 // 使用 类 来封装，更具有内聚性
-class HYRequest{
+class FZRequest{
     constructor(baseURL, timeout){
         this.instance = axios.create({
             baseURL,
@@ -27,4 +27,5 @@ class HYRequest{
     }
 }
 
-export default new HYRequest(BASE_URL, TIME_OUT)
+const instance = new FZRequest(BASE_URL, TIME_OUT)
+export default instance
