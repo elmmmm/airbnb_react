@@ -19,6 +19,7 @@ export const FooterWrapper = styled.div`
 
     .text {
       margin-right: 6px;
+      line-height: 1;
     }
   }
 `

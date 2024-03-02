@@ -9,6 +9,8 @@ import HomeSectionV2 from "./c-cpns/home-section-v2";
 import HomeLongfor from './c-cpns/home-longfor'
 import HomeSectionV3 from './c-cpns/home-section-v3'
 import { isEmptyO } from "@/utils";
+import AppHeader from "@/components/app-header";
+import { changeHeaderConfigAction } from "@/store/modules/main";
 
 const Home = memo(() => {
   // 获取redux中的数据
@@ -27,11 +29,13 @@ const Home = memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction("home get data"));
+    dispatch(changeHeaderConfigAction({ isFixed: true, topAlpha: true }))
   }, [dispatch]);
 
 
   return (
     <HomeWrapper>
+      <AppHeader/>
       <HomeBanner />
       <div className="content">
         {isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo}/>}

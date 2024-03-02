@@ -27,7 +27,7 @@ export const FooterWrapper = styled.div`
           margin-top: 6px;
           color: #767676;
           cursor: pointer;
-          &:hover {
+          & span:hover {
             text-decoration: underline;
           }
         }
